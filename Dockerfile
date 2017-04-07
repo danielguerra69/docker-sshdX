@@ -12,6 +12,6 @@ RUN apk add xvfb supervisor xfce4-terminal openbox util-linux dbus ttf-freefont\
 ADD etc /etc
 ADD bin/* /usr/local/bin/
 ENV DISPLAY=:0
-ENTRYPOINT ["docker-entrypoint.sh"]
+ENTRYPOINT ["/bin/docker-entrypoint.sh"]
 #start sshd
 CMD ["/usr/bin/supervisord","-c","/etc/supervisord.conf"]
